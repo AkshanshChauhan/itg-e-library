@@ -1,0 +1,296 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    transition-duration: 0.3s;
+}
+
+html {
+    position: relative;
+    width: 100%;
+    height: 962.8px;
+}
+
+body {
+    background-color: rgb(167, 221, 255);
+    width: 100%;
+}
+
+.nav {
+    background-color: rgb(0, 119, 255);
+    color: white;
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.logo {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scaleX(110%) scaleY(110%);
+}
+
+.titleBox {
+    overflow: hidden;
+    padding: 5px;
+}
+
+.siteTitle {
+    position: relative;
+    font-size: 25px;
+    width: 100%;
+    transform: translateX(-110%);
+    cursor: pointer;
+}
+
+.siteTitle:hover {
+    color: rgb(145, 220, 255);
+}
+
+.aboutUs {
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 119, 255);
+    padding: 5px;
+    border-radius: 20px;
+    font-weight: lighter;
+    justify-self: right;
+    cursor: pointer;
+}
+
+.aboutUs:hover {
+    color: aliceblue;
+    background-color: rgb(0, 43, 153);
+    outline: 1px solid white;
+}
+
+.slidingGallery {
+    background-color: rgb(112, 178, 223);
+    width: 100%;
+    height: 50vh;
+}
+
+.slidingGallery img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    position: absolute;
+}
+
+.slidingGallery img:hover {
+    object-position: 0% 100%;
+    filter: grayscale(1);
+}
+
+.slidingGallery a {
+    position: absolute;
+    z-index: 10;
+}
+
+.yearLinks {
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-areas: 'y1 n' 'y2 n' 'y3 n' 'y4 n';
+    flex-direction: column;
+    margin: 10px;
+    outline: 1px solid blue;
+    overflow: hidden;
+}
+
+.yearLinks a {
+    background-color: rgb(0, 123, 255);
+    color: white;
+    font-size: xx-large;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    position: relative;
+    transform: translateX(0%);
+    width: max-content;
+    height: auto;
+    padding-top: 20px;
+}
+
+.yearLinks a:nth-child(1) {
+    grid-area: y1;
+    animation: slidingYear 1s ease-in-out reverse;
+}
+
+.yearLinks a:nth-child(2) {
+    grid-area: y2;
+    animation: slidingYear 1.2s ease-in-out reverse;
+}
+
+.yearLinks a:nth-child(3) {
+    grid-area: y3;
+    animation: slidingYear 1.4s ease-in-out reverse;
+}
+
+.yearLinks a:nth-child(4) {
+    grid-area: y4;
+    animation: slidingYear 1.6s ease-in-out reverse;
+}
+
+.news {
+    outline: 1px solid blue;
+    grid-area: n;
+    width: calc(100vw - 235px);
+    background-color: rgb(206, 252, 255);
+    display: grid;
+    padding: 10px;
+    height: 400px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 'nu nu' 'nu eu';
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+.newUpdates {
+    background-color: rgb(42, 89, 220);
+    padding: 5px;
+    color: white;
+    height: 180px;
+    display: grid;
+    animation: news 1s ease-in 0s reverse;
+    margin: auto;
+    scroll-snap-align: center;
+    width: 50%;
+}
+
+@keyframes news {
+    100% {
+        transform: rotateZ(10deg) translateX(-100px);
+    }
+}
+
+.newUpdates:hover {
+    border-bottom: 20px solid rgb(4, 146, 255);
+    box-shadow: 0px 0px 10px blue;
+}
+
+.newUpdates a {
+    font-size: medium;
+    background-color: rgb(0, 136, 255);
+    color: rgb(255, 255, 255);
+    grid-area: nu;
+    padding: 0px;
+}
+
+.eventUpdate {
+    background-color: rgb(42, 89, 220);
+    padding: 5px;
+    color: white;
+    height: 180px;
+    display: grid;
+    animation: news 1s ease-in 0s reverse;
+    scroll-snap-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.eventUpdate:hover {
+    border-bottom: 20px solid rgb(4, 146, 255);
+    box-shadow: 0px 0px 10px blue;
+}
+
+.eventUpdate a {
+    font-size: medium;
+    background-color: rgb(0, 136, 255);
+    color: rgb(255, 255, 255);
+    grid-area: eu;
+    padding: 0px;
+}
+
+.shadNormal {
+    width: 0px;
+    height: 10px;
+    background-color: rgb(0, 62, 168);
+    margin-top: 10px;
+    justify-self: center;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(52, 126, 255);
+    gap: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes slidingYear {
+    100% {
+        transform: translateX(-110%);
+    }
+}
+
+.yearLinks a:hover {
+    transform: scaleX(105%) scaleY(105%);
+    background-color: rgb(142, 16, 205);
+    box-shadow: 0px 0px 5px blue;
+}
+
+footer a:hover {
+    color: rgb(255, 95, 95);
+    transform: scaleY(90%) scaleX(90%);
+}
+
+.cross {
+    font-size: xx-large;
+    position: absolute;
+    transition-duration: 0ms;
+    width: 40px;
+    height: 40px;
+    outline: 5px solid rgb(5, 117, 255);
+    border-radius: 50%;
+    background-color: rgba(0, 213, 255, 0.426);
+    color: rgba(255, 0, 0, 0);
+    backdrop-filter: invert(1);
+}
+
+@media (max-width: 700px) {
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+    .siteTitle {
+        font-size: medium;
+    }
+    .aboutUs {
+        font-size: medium;
+    }
+    .news {
+        grid-template-columns: 95%;
+        grid-template-rows: max-content;
+        grid-template-areas: 'nu' 'nu' 'nu' 'eu';
+        font-size: small;
+    }
+    .newUpdates {
+        width: 95%;
+    }
+    .eventUpdate {
+        width: 95%;
+    }
+}
